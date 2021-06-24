@@ -10,7 +10,7 @@ export const store = new Vuex.Store({
 
     mutations: {
         addItem(state, payload){
-            state.push(payload.user);
+            state.items.push(payload.item);
         }
     }
 })
