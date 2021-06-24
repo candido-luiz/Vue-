@@ -1,13 +1,31 @@
 <template>
     <div class="create-todoItem">
-        <input type="text" name="createItemInput" id="createItemInput" placeholder="Add To-Do item">
-        <button class="btn-addItem">Add</button>
+        <input v-model="inputText" type="text" name="createItemInput" id="createItemInput" placeholder="Add To-Do item">
+        <button class="btn-addItem" @click="addItem">Add</button>
     </div>
 </template>
 
 <script>
-export default {
+import Item from '../Item';
 
+export default {
+    
+    data(){
+        return{
+            inputText: ''
+        }
+    },
+
+    methods:{
+        //adiciona novo item na store.items
+        addItem: function(){
+            if(this.inputText.trim()){
+
+                let item = new Item(this.inputText);
+                this.$store.commit('addItem', {item});
+            }
+        }
+    }
 }
 </script>
 
