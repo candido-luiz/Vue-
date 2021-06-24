@@ -1,14 +1,13 @@
 <template>
     <div>
-        <section class="todo-items">
+        <div class="addItems">
             <AddTodoItem />
-        </section>
-        
+        </div>
     </div>
 </template>
 
 <script>
-import AddTodoItem from './AddTodoIdem.vue';
+import AddTodoItem from './AddTodoItem.vue';
 
 export default {
     components:{
@@ -18,10 +17,10 @@ export default {
 </script>
 
 <style>
-.todo-items{
+/* .todo-items{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+} */
 </style>

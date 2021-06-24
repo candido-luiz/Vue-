@@ -4,7 +4,7 @@
 
     <main class="main">
       <SideBar />
-      <TodoItems />
+      <TodoItemsList />
     </main>
     
     <Footer />
@@ -14,7 +14,7 @@
 <script>
 import Header from './components/Header.vue';
 import SideBar from './components/SideBar.vue';
-import TodoItems from './components/TodoItems.vue';
+import TodoItemsList from './components/TodoItemsList.vue';
 import Footer from './components/Footer.vue';
 
 export default {
@@ -23,7 +23,7 @@ export default {
     Header,
     SideBar,
     Footer,
-    TodoItems
+    TodoItemsList
   }
 }
 </script>
