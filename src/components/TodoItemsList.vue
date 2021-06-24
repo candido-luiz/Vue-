@@ -3,15 +3,28 @@
         <div class="addItems">
             <AddTodoItem />
         </div>
+        <div v-for="item in items"
+        :key="item.id">
+            <TodoListItem :item="item"/>
+        </div>
     </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import AddTodoItem from './AddTodoItem.vue';
+import TodoListItem from './TodoListItem.vue';
 
 export default {
     components:{
-        AddTodoItem
+        AddTodoItem,
+        TodoListItem
+    },
+
+    computed: {
+        ...mapState([
+            'items'
+        ])
     }
 }
 </script>
