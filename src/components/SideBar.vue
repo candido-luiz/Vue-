@@ -1,11 +1,9 @@
 <template>
-    <div>
-        <aside class="sideBar">
-            <div class="">All</div>
-            <div>Active</div>
-            <div>Completed</div>
-        </aside>
-    </div>
+    <aside class="sideBar">
+        <div class="">All</div>
+        <div>Active</div>
+        <div>Completed</div>
+    </aside>
 </template>
 
 <script>

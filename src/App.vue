@@ -34,7 +34,14 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+
+.main{
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  grid-template-rows: 300px;
 }
 </style>
