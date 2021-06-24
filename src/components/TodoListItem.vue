@@ -1,7 +1,7 @@
 <template>
     <div class="list-item">
         <div class="checkButton"></div>
-        <div>{{item.text}}</div>
+        <div class="item-text">{{item.text}}</div>
         <button>Delete</button>
     </div>
 </template>
@@ -18,17 +18,23 @@ export default {
 .list-item{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     max-width: 600px;
     width: 100%;
     padding: 5px;
     margin: 5px 0;
+    background-color: #fff;
+    box-shadow: 1px 1px 3px #3a3939;
 }
 .checkButton{
     width: 12px;
     height: 12px;
     background-color: green;
 }
-
+.item-text{
+    flex: 1;
+    margin-left: 15px;
+}
 .btn-delete{
     padding: 5px 6px;
 }

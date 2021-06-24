@@ -1,12 +1,17 @@
 <template>
     <div>
-        <div class="addItems">
+        <section class="addItems">
             <AddTodoItem />
-        </div>
-        <div v-for="item in items"
-        :key="item.id">
-            <TodoListItem :item="item"/>
-        </div>
+        </section>
+
+        <section class="todo-list">
+            <TodoListItem v-for="item in items" 
+                :key="item.id" 
+                :item="item"  
+            />
+        </section>
+
+        
     </div>
 </template>
 
@@ -29,11 +34,12 @@ export default {
 }
 </script>
 
-<style>
-/* .todo-items{
+<style scoped>
+
+.todo-list{
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-} */
+}
 </style>
