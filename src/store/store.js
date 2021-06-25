@@ -11,6 +11,14 @@ export const store = new Vuex.Store({
     mutations: {
         addItem(state, payload){
             state.items.push(payload.item);
+        },
+
+        removeItem(state, id){
+            let filteredItems = state.items.filter((item) =>{
+                return item.id != id;
+            })
+
+            state.items = filteredItems;
         }
     }
 })

@@ -2,14 +2,21 @@
     <div class="list-item">
         <div class="checkButton"></div>
         <div class="item-text">{{item.text}}</div>
-        <button>Delete</button>
+        <button @click="removeItem(item.id)">Delete</button>
     </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
     props:{
         item: Object
+    },
+
+    methods:{
+        ...mapMutations([
+            'removeItem'
+        ])
     }
 }
 </script>
