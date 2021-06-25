@@ -2,12 +2,12 @@
     <div class="list-item">
         
         <div class="checkButton" 
-            :class="{'checked': isCompleted, 'notChecked': !isCompleted}"
+            :class="{'checked': isDone, 'notChecked': !isDone}"
             @click="toggleChecked">
         </div>
 
         <div class="item-text"
-        :class="{'completed-item': isCompleted}">
+        :class="{'completed-item': isDone}">
             {{item.text}}
         </div>
 
@@ -18,13 +18,14 @@
 <script>
 import { mapMutations } from 'vuex'
 export default {
+
     props:{
         item: Object
     },
 
     data(){
         return{
-            isCompleted: false
+            isDone: this.item.isDone
         }
     },
 
@@ -32,17 +33,21 @@ export default {
         ...mapMutations([
             'removeItem',
             'addActiveItem',
-            'addCompletedItem'
+            'addCompletedItem',
+            'toggleIsDoneStatus'
         ]),
 
         toggleChecked: function(){
-            this.isCompleted = !this.isCompleted;
-            
-            if(this.isCompleted){
+            this.isDone = !this.isDone;
+
+            console.log(this.isDone);
+            if(this.isDone){
                 this.addCompletedItem(this.item);
             }else{
                 this.addActiveItem(this.item);
             }
+
+            this.toggleIsDoneStatus(this.item.id);
         }
     }
 }

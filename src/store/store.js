@@ -32,6 +32,17 @@ export const store = new Vuex.Store({
             state.items = filteredItems;
         },
 
+        //troca o status 'isDone' do item 
+        toggleIsDoneStatus(state, id){
+
+            let toggledIsDoneItemPosition = state.items.findIndex((item) => {
+                return item.id == id;    
+            });
+            let isDoneStatus = state.items[toggledIsDoneItemPosition].isDone;
+
+            state.items[toggledIsDoneItemPosition].isDone = !isDoneStatus;
+        },
+
         addActiveItem(state,item){
             state.activeItems.push(item);
 
