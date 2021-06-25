@@ -1,7 +1,16 @@
 <template>
     <div class="list-item">
-        <div class="checkButton"></div>
-        <div class="item-text">{{item.text}}</div>
+        
+        <div class="checkButton" 
+            :class="{'checked': isCompleted, 'notChecked': !isCompleted}"
+            @click="toggleChecked">
+        </div>
+
+        <div class="item-text"
+        :class="{'completed-item': isCompleted}">
+            {{item.text}}
+        </div>
+
         <button @click="removeItem(item.id)">Delete</button>
     </div>
 </template>
@@ -13,10 +22,20 @@ export default {
         item: Object
     },
 
+    data(){
+        return{
+            isCompleted: false
+        }
+    },
+
     methods:{
         ...mapMutations([
             'removeItem'
-        ])
+        ]),
+
+        toggleChecked: function(){
+            this.isCompleted = !this.isCompleted;
+        }
     }
 }
 </script>
@@ -33,9 +52,17 @@ export default {
     background-color: #fff;
     box-shadow: 1px 1px 3px #3a3939;
 }
+.completed-item{
+    text-decoration: line-through;
+    color: #ccc;
+}
 .checkButton{
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid;
+}
+.checked{
     background-color: green;
 }
 .item-text{
