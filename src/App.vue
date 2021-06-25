@@ -34,7 +34,10 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
-
+body{
+  position: relative;  
+  min-height: 100vh;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
@@ -42,6 +45,6 @@ export default {
 .main{
   display: grid;
   grid-template-columns: 1fr 7fr;
-  grid-template-rows: 300px;
+  min-height: 90vh;
 }
 </style>
