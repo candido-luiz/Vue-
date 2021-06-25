@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import filterItem from '../utils/index';
 
 Vue.use(Vuex);
 
@@ -24,12 +25,22 @@ export const store = new Vuex.Store({
             state.activeItems.push(payload.item);
         },
 
-        removeItem(state, id){
-            let filteredItems = state.items.filter((item) =>{
-                return item.id != id;
-            })
+        removeItem(state, item){
 
+            let filteredItems = filterItem(state.items, item);
             state.items = filteredItems;
+
+            //remove item da lista completedItems
+            if(item.isDone){
+                let filteredCompletedItems = filterItem(state.completedItems, item);
+                state.completedItems = filteredCompletedItems;
+            }
+            
+            //remove item da lista activeItems
+            else{
+                let filteredActiveItems = filterItem(state.activeItems, item);
+                state.activeItems = filteredActiveItems;
+            }
         },
 
         //troca o status 'isDone' do item 

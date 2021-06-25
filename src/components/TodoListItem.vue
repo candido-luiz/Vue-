@@ -11,7 +11,7 @@
             {{item.text}}
         </div>
 
-        <button @click="removeItem(item.id)">Delete</button>
+        <button @click="removeItem(item)">Delete</button>
     </div>
 </template>
 
