@@ -1,14 +1,23 @@
 <template>
     <aside class="sideBar">
-        <div class="items-option">All</div>
-        <div class="items-option">Active</div>
-        <div class="items-option">Completed</div>
+        <div class="items-option" @click="showAllItems">All</div>
+        <div class="items-option" @click="showActiveItems">Active</div>
+        <div class="items-option" @click="showCompletedItems">Completed</div>
     </aside>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
 
+    methods:{
+
+        ...mapMutations([
+            'showAllItems',
+            'showActiveItems',
+            'showCompletedItems'
+        ])
+    }
 }
 </script>
 

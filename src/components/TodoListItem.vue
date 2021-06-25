@@ -30,11 +30,19 @@ export default {
 
     methods:{
         ...mapMutations([
-            'removeItem'
+            'removeItem',
+            'addActiveItem',
+            'addCompletedItem'
         ]),
 
         toggleChecked: function(){
             this.isCompleted = !this.isCompleted;
+            
+            if(this.isCompleted){
+                this.addCompletedItem(this.item);
+            }else{
+                this.addActiveItem(this.item);
+            }
         }
     }
 }

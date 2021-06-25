@@ -4,7 +4,21 @@
             <AddTodoItem />
         </section>
 
-        <section class="todo-list">
+        <section v-if="showActiveItems" class="todo-list">
+            <TodoListItem v-for="item in getActiveItems" 
+                :key="item.id" 
+                :item="item"  
+            />
+        </section>
+
+        <section v-else-if="showCompletedItems" class="todo-list">
+            <TodoListItem v-for="item in getCompletedItems" 
+                :key="item.id" 
+                :item="item"  
+            />
+        </section>
+
+        <section v-else class="todo-list">
             <TodoListItem v-for="item in items" 
                 :key="item.id" 
                 :item="item"  
@@ -16,7 +30,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 import AddTodoItem from './AddTodoItem.vue';
 import TodoListItem from './TodoListItem.vue';
 
@@ -28,7 +42,14 @@ export default {
 
     computed: {
         ...mapState([
-            'items'
+            'items',
+            'showActiveItems',
+            'showCompletedItems'
+        ]),
+
+        ...mapGetters([
+            'getActiveItems',
+            'getCompletedItems'
         ])
     }
 }
