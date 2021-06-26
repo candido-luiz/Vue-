@@ -57,11 +57,9 @@ export const store = new Vuex.Store({
         addActiveItem(state,item){
             state.activeItems.push(item);
 
-            //remover da lista de activeItems:
-            let filteredCompletedItems = state.completedItems.filter((it) => {
-                return it.id != item.id ;
-            })
-
+            //remover da lista de completedItems:
+            let filteredCompletedItems = filterItem(state.completedItems, item);
+            
             state.completedItems = filteredCompletedItems;
         },
 
@@ -69,9 +67,7 @@ export const store = new Vuex.Store({
             state.completedItems.push(item);
 
             //remover da lista de activeItems:
-            let filteredActiveItems = state.activeItems.filter((it) => {
-                return it.id != item.id ;
-            })
+            let filteredActiveItems = filterItem(state.activeItems, item);
 
             state.activeItems = filteredActiveItems;
         },
