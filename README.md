@@ -46,5 +46,5 @@ npm run build
 - [ ] Usuário pode editar um item to-do
 - [x] Usuário pode ver uma lista com todos os items terminados/completos
 - [x] usuário pode ver uma lista com todos os items que ainda estão ativos
-- [] Usuário pode ver a data de criação dos items
-- [] Os items são persistidos no localStorage
+- [ ] Usuário pode ver a data de criação dos items
+- [ ] Os items são persistidos no localStorage
