@@ -40,7 +40,6 @@ export default {
         toggleChecked: function(){
             this.isDone = !this.isDone;
 
-            console.log(this.isDone);
             if(this.isDone){
                 this.addCompletedItem(this.item);
             }else{
