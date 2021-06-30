@@ -23,6 +23,8 @@ export default {
 
                 let item = new Item(this.inputText);
                 this.$store.commit('addItem', {item});
+
+                this.inputText = '';
             }
         }
     }
