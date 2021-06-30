@@ -1,8 +1,8 @@
 <template>
     <aside class="sideBar">
-        <div class="items-option" @click="showAllItems">All</div>
-        <div class="items-option" @click="showActiveItems">Active</div>
-        <div class="items-option" @click="showCompletedItems">Completed</div>
+        <div id="showAllItems" class="items-option" @click="showAllItems">All</div>
+        <div id="showActiveItems" class="items-option" @click="showActiveItems">Active</div>
+        <div id="showCompletedItems" class="items-option" @click="showCompletedItems">Completed</div>
     </aside>
 </template>
 
