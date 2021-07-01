@@ -10,6 +10,8 @@ Criação de uma aplicação baseado no desafio [ToDo-App](https://github.com/fl
 
 [Vue-Devtools](https://devtools.vuejs.org/) para depuração da aplicação.
 
+[Vue-Test-Utils](https://vue-test-utils.vuejs.org/) para testes em componentes.
+
 ## Instalando e Rodando a aplicação 
 
 ### Clone do repositório: 
